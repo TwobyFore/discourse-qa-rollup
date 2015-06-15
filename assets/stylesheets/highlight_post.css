@@ -1,0 +1,9 @@
+/* Add styles for highlight post here */
+
+.best_post {
+  border: 1px solid black;
+}
+
+.given_group {
+  border: 1px dotted black;
+}
