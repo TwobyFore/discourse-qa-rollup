@@ -5,7 +5,9 @@ PostsController.class_eval do
   def highlight_post
     begin
       post = Post.find(params[:post_id])
-      if post.topic.best_post.id == post.id
+      post_most_liked = post.topic.posts.order('like_count desc').limit(1).first
+
+      if post_most_liked.id == post.id
         users = Group.where(name: params[:group])
         if users.empty?
           render text: HIGHLIGHTS_TYPES[:best_post]
