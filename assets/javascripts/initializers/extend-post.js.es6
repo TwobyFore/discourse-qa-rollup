@@ -12,7 +12,7 @@ export default {
 
           const res = $.ajax("/highlight_post", {
             type: 'GET',
-            data: { post_id: post_id, username: username, group: group },
+            data: { post_id: post_id, group: group },
             async: false
           }).responseText;
           return res;
