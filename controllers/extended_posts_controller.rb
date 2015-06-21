@@ -1,5 +1,7 @@
 PostsController.class_eval do
 
+  skip_before_filter :ensure_logged_in, only: :highlight_post
+
   HIGHLIGHTS_TYPES = { most_liked_post: 'most_liked_post' }
 
   def highlight_post
