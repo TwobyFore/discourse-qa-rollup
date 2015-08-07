@@ -3,4 +3,4 @@ en:
     admin:
       site_settings:
         categories:
-          highlight_post: 'Highlight Group'
+          highlight_post: 'Top Answer'
