@@ -12,11 +12,12 @@ export default {
 
           const res = $.ajax("/highlight_post", {
             type: 'GET',
-            data: { post_id: post_id, group: group },
-            async: false
-          }).responseText;
-          return res;
-
+            data: { post_id: post_id, group: group }
+          }).done(function(res){
+            if(res.highlight_post){
+              $("article.boxed[data-post-id='"+ post_id +"']").addClass('most_liked_post');
+            }
+          });
         }.property('highlight_post')
       });
     }

@@ -9,12 +9,12 @@ PostsController.class_eval do
       post = Post.find(params[:post_id])
       most_liked_post = post.topic.posts.joins(user: [group_users:[:group]]).where(groups: {name: params[:group]}).order(like_count: :desc).limit(1).first
       if most_liked_post.id == post.id
-        render text: HIGHLIGHTS_TYPES[:most_liked_post]
+        render json: { highlight_post: true }
       else
-        head :ok
+        render json: { highlight_post: false }
       end
     rescue
-      head :ok
+      render json: { highlight_post: false }
     end
   end
 
