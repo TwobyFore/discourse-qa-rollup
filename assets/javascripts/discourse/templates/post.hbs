@@ -1,5 +1,7 @@
 {{post-gap post=this postStream=controller.model.postStream before="true"}}
 
+{{view 'topic-map-container' post=this topic=controller.model}}
+
 {{#if hasTimeGap}}
   {{time-gap daysAgo=daysSincePrevious}}
 {{/if}}
@@ -115,7 +117,6 @@
       {{/if}}
 
       {{actions-summary post=this}}
-      {{view 'topic-map-container' post=this topic=controller.model}}
     </div>
 
     {{post-gutter post=this
