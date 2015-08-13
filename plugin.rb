@@ -1,5 +1,5 @@
-# name: plugin_discourse_post
-# about: highlight best post of given topic
+# name: discourse_qa_rollup
+# about: highlight best post of given topic, modify topic element order
 # authors: Vairix
 
 register_asset "javascripts/discourse/templates/topic.hbs"
