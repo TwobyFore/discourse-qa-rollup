@@ -15,6 +15,7 @@ export default {
             data: { post_id: post_id, group: group }
           }).done(function(res){
             if(res.highlight_post){
+              $('.top-answer-link').parent().removeClass('hidden');
               $("article.boxed[data-post-id='"+ post_id +"']").addClass('most_liked_post');
             }
           });
